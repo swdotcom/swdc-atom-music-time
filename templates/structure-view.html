@@ -2,7 +2,7 @@
     <style>
         /* @import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css"); */
         .tree-panel {
-            height: 630px;
+            height: 100%;
             overflow: scroll;
         }
 
@@ -121,6 +121,13 @@
             float: left;
             margin-right: 6px;
         }
+        .paw-menus::before {
+            content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAACe0lEQVQ4ja2Ty08TURSHv+ntoJRCRF5iUVFEihJcSDTFV1REEPEfYGdIcOECTFyasHBngpCoESMrN8aFC58VjAuNiayMEV9AMGgCgq0CbacPph1z25lm6JqTnMm5597flzvnnMt6mSI5DZ29ubi9QDfQDuw0czOAH7gHfLEfnngyiCMHkAfcBD4BfYAX2GB6vZmTe3eAfLvQmQN5BrQkXS5muy6QKNpM9YMRFF3nR1cPqrZE9f0Rh4hEeoBa88YJKbbf6IaEyCBRWoJWsh1dFBD0HeavrxldLSBaXEVsa6V1/iQwYC0s0D6gJ165hcUzrSipFIVz31CNEBWjfsrHRlFXQ7jnphARjcWWVmJVHqm7aGqzvyYLK6a7ezHiCsHGZuqv96c3DKcTQ1GoG7iWXn+/fJXVPDeLR07T0H9FmNo+C9QmPyIWRRcu1Gg4nQy0nGDhfAcIhfKnfspejOGMraRBIhrFps2CdslPzd1Bwl4vxePj/G7vJNB0DJwiPSQLB1rRXW5qbg/x79BB3JNT2LX2rqEuL6chC6faCDQdBYcBAd2spkHQ64OzSSqfP7bL1nRtxspGdtfyx3s8M6uqgGAy43kCHA6C1T5CdfV20Kwd5LeymmcbGA4IJyEQByEyLuOwDooDzbPDDnplB40ASRkUTn4FRwqWNAhpEE1kPKzBUgSMFEXTny1I0nwyWdAEMCyDjfPzVL19iBpfRsTilE69o2zyDSIaQ42v4Hn/iPyfvyzQsKldU2z5jvbI6d708QPS7VbByzVr4LWpyfQip/odwC0glauymdyTNzlndSwXZMEuAY3AkBxkYFU2E5CFkbn95tPITuT6GfAffc/PoLqm3VoAAAAASUVORK5CYII=');
+            width: 16px;
+            height: 12px;
+            float: left;
+            margin-right: 6px;
+        }
 
         li.play-list-angle-right:before {
             content: '\f078';
@@ -211,7 +218,12 @@
             style="display: none"
         ></a>
 
-        <a href="#" id="spotify-connect" title="connect to spotify" class="spotify-menus">
+        <a
+            href="#"
+            id="spotify-connect"
+            title="connect to spotify"
+            class="spotify-menus"
+        >
             Connect Spotify</a
         >
 
@@ -222,6 +234,15 @@
             style="display: none"
             class="spotify-menus"
         ></a>
+        <a
+            href="#"
+            id="web-analytics"
+            title=""
+            style="display: none"
+            class="paw-menus"
+        >
+            See Web Analytics</a
+        >
         <img
             width="11"
             height="11"
