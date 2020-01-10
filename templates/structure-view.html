@@ -197,17 +197,113 @@
         .playlist-head {
             padding: 9px 15px 10px 15px;
         }
+        .showLeft {
+            text-shadow: none !important;
+            color: #fff !important;
+            padding: 1px 10px 8px 5px;
+        }
+
+        .icons li {
+            background: none repeat scroll 0 0 #fff;
+            height: 3px;
+            width: 4px;
+            line-height: 0;
+            list-style: none outside none;
+            margin-right: 15px;
+            margin-top: 2px;
+            vertical-align: top;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .btn-left {
+            left: 0.4em;
+        }
+
+        .btn-right {
+            right: 0px;
+        }
+
+        .btn-left,
+        .btn-right {
+            position: absolute;
+            top: 0.1em;
+        }
+
+        .dropbtn {
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: absolute;
+            display: inline-block;
+            right: 0.4em;
+            display: none;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: relative;
+            margin-top: 22px;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content span {
+            color: black;
+            padding: 6px 13px;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+        }
+        .dropdown-content :hover {
+            background-color: #9f9f9f
+        }
+
+        .dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .show {
+            display: block;
+        }
     </style>
     <div class="sv-toolbox block playlist-head">
         <span style="float: left;">MUSIC TIME : MY PLAYLISTS</span>
-        <span style="float: right;">
-            <img
-                alt=""
-                style="cursor: pointer; display: none"
-                id="refresh-treeview"
-                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTIiIGhlaWdodD0iMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgLTEyOCAxNTM2IDE3OTIiIHN0eWxlPSItbXMtdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTsgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyB0cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyB2ZXJ0aWNhbC1hbGlnbjogLTAuMTQzZW07Ij48cGF0aCBkPSJNMTUxMSA5MjhxMCA1LTEgN3EtNjQgMjY4LTI2OCA0MzQuNVQ3NjQgMTUzNnEtMTQ2IDAtMjgyLjUtNTVUMjM4IDEzMjRsLTEyOSAxMjlxLTE5IDE5LTQ1IDE5dC00NS0xOXQtMTktNDVWOTYwcTAtMjYgMTktNDV0NDUtMTloNDQ4cTI2IDAgNDUgMTl0MTkgNDV0LTE5IDQ1bC0xMzcgMTM3cTcxIDY2IDE2MSAxMDJ0MTg3IDM2cTEzNCAwIDI1MC02NXQxODYtMTc5cTExLTE3IDUzLTExN3E4LTIzIDMwLTIzaDE5MnExMyAwIDIyLjUgOS41dDkuNSAyMi41em0yNS04MDB2NDQ4cTAgMjYtMTkgNDV0LTQ1IDE5aC00NDhxLTI2IDAtNDUtMTl0LTE5LTQ1dDE5LTQ1bDEzOC0xMzhROTY5IDI1NiA3NjggMjU2cS0xMzQgMC0yNTAgNjVUMzMyIDUwMHEtMTEgMTctNTMgMTE3cS04IDIzLTMwIDIzSDUwcS0xMyAwLTIyLjUtOS41VDE4IDYwOHYtN3E2NS0yNjggMjcwLTQzNC41VDc2OCAwcTE0NiAwIDI4NCA1NS41VDEyOTcgMjEybDEzMC0xMjlxMTktMTkgNDUtMTl0NDUgMTl0MTkgNDV6IiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg=="
-            />
-        </span>
+
+        <div class="dropdown" id="sortDiv">
+            
+            <!-- three dots -->
+            <ul
+                class="dropbtn icons btn-right showLeft"
+                id="sortDropDown"
+                style="width: 5px;"
+            >
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <!-- menu -->
+            <div id="myDropdown" class="dropdown-content">
+                <span id="alphabetically">Sort A-Z</span>
+                <span id="sortToOriginal">Sort Latest</span>
+            </div>
+
+            
+        </div>
+        <span style="float: right;padding-right: 10px;">
+                <img
+                    alt=""
+                    style="cursor: pointer; display: none;margin-top: 3px;"
+                    id="refresh-treeview"
+                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTIiIGhlaWdodD0iMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgLTEyOCAxNTM2IDE3OTIiIHN0eWxlPSItbXMtdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTsgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyB0cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyB2ZXJ0aWNhbC1hbGlnbjogLTAuMTQzZW07Ij48cGF0aCBkPSJNMTUxMSA5MjhxMCA1LTEgN3EtNjQgMjY4LTI2OCA0MzQuNVQ3NjQgMTUzNnEtMTQ2IDAtMjgyLjUtNTVUMjM4IDEzMjRsLTEyOSAxMjlxLTE5IDE5LTQ1IDE5dC00NS0xOXQtMTktNDVWOTYwcTAtMjYgMTktNDV0NDUtMTloNDQ4cTI2IDAgNDUgMTl0MTkgNDV0LTE5IDQ1bC0xMzcgMTM3cTcxIDY2IDE2MSAxMDJ0MTg3IDM2cTEzNCAwIDI1MC02NXQxODYtMTc5cTExLTE3IDUzLTExN3E4LTIzIDMwLTIzaDE5MnExMyAwIDIyLjUgOS41dDkuNSAyMi41em0yNS04MDB2NDQ4cTAgMjYtMTkgNDV0LTQ1IDE5aC00NDhxLTI2IDAtNDUtMTl0LTE5LTQ1dDE5LTQ1bDEzOC0xMzhROTY5IDI1NiA3NjggMjU2cS0xMzQgMC0yNTAgNjVUMzMyIDUwMHEtMTEgMTctNTMgMTE3cS04IDIzLTMwIDIzSDUwcS0xMyAwLTIyLjUtOS41VDE4IDYwOHYtN3E2NS0yNjggMjcwLTQzNC41VDc2OCAwcTE0NiAwIDI4NCA1NS41VDEyOTcgMjEybDEzMC0xMjlxMTktMTkgNDUtMTl0NDUgMTl0MTkgNDV6IiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg=="
+                />
+            </span>
     </div>
     <div class="loader" id="loader" style="display: none"></div>
     <div class="vertical-menu">
