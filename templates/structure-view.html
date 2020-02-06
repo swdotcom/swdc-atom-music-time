@@ -2,11 +2,12 @@
     <style>
         /* @import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css"); */
         .tree-panel {
-            height: 100%;
+            height: 78%;
             overflow: scroll;
+            padding-bottom: 120px;
         }
 
-        #tree-playlist li {
+        .playlist-li {
             cursor: pointer;
             margin-bottom: 0px;
             padding: 4px 0 4px 8px;
@@ -128,7 +129,16 @@
             float: left;
             margin-right: 6px;
         }
-
+        li#recomendation-section :hover {
+            background-color: none !important;
+        }
+        li#recomendation-section {
+            margin-top: 25px
+        }
+        .title-header {
+            background-color: #2f333d;
+            height: 34px;
+        }
         li.play-list-angle-right:before {
             content: '\f078';
             font-family: 'Octicons Regular';
@@ -196,6 +206,9 @@
         }
         .playlist-head {
             padding: 9px 15px 10px 15px;
+        }
+        .recommend-head {
+            padding: 5px 15px 10px 15px;
         }
         .showLeft {
             text-shadow: none !important;
@@ -273,7 +286,7 @@
             display: block;
         }
     </style>
-    <div class="sv-toolbox block playlist-head">
+    <div class="sv-toolbox block playlist-head title-header">
         <span style="float: left;">MUSIC TIME : MY PLAYLISTS</span>
 
         <div class="dropdown" id="sortDiv">
@@ -282,7 +295,7 @@
             <ul
                 class="dropbtn icons btn-right showLeft"
                 id="sortDropDown"
-                style="width: 5px;"
+                style="width: 5px; padding-right: 23px;"
             >
                 <li></li>
                 <li></li>
@@ -296,7 +309,7 @@
 
             
         </div>
-        <span style="float: right;padding-right: 10px;">
+        <span style="float: right;padding-right: 10px; padding-right: 25px;">
                 <img
                     alt=""
                     style="cursor: pointer; display: none;margin-top: 3px;"
@@ -357,6 +370,12 @@
         <ol
             class="full-menu list-tree has-collapsable-children"
             id="tree-playlist"
+        ></ol>
+    </div>
+    <div class="tree-panel" id="tree-recommend-content">
+        <ol
+            class="full-menu list-tree has-collapsable-children"
+            id="tree-recommend-playlist"
         ></ol>
     </div>
     <!-- <div class="mask">
