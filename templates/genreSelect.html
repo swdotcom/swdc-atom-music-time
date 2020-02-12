@@ -1,0 +1,96 @@
+<style>
+        #msgText {
+            width: 94%;
+            padding: 8px 8px;
+            /* font-size: 14px; */
+            margin: 8px 12px;
+            display: inline-block;
+            border: 1px solid #535252;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #535252;
+        }
+    
+        .shareSlackButton {
+            width: 45%;
+            background-color: #4caf50;
+            color: white;
+            padding: 8px 4px;
+            margin: 11px 11px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            display: inline-block;
+        }
+        .closeSlackButton {
+            width: 45%;
+            background-color: #868686;
+            color: white;
+            padding: 8px 4px;
+            margin: 11px 11px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            display: inline-block;
+        }
+    
+        .shareSlackButton:hover {
+            background-color: #45a049;
+        }
+    
+        #slackSharePromptDiv {
+            border-radius: 5px;
+            background-color: #252830;
+            padding: 20px;
+        }
+        #labelchannel {
+            color: black;
+            font-size: 14px !important;
+            padding: 2px 0px 0px 12px !important;
+            margin-left: 12px !important;
+        }
+        /* .error
+        {
+        border:2px solid red !important;
+        } */
+    
+        .slack-error {
+            color: #d8000c;
+            border: 1px solid;
+            margin: 10px 21px 10px 10px;
+            padding: 14px 8px 14px 47px;
+            background-repeat: no-repeat;
+            background-position: 9px center;
+            background-color: #ffbaba;
+            background-image: url(https://i.imgur.com/GnyDvKN.png);
+            display: none;
+        }
+    </style>
+    
+    <div id="slackSharePromptDiv">
+        <form>
+                <div class="slack-error" id="slack-error" >Message is required !</div>
+            <label for="msgText" id="labelChannel"
+                >Enter a message to appear in the selected channel</label
+            >
+            <!-- <input
+                type="text"
+                id="msgText"
+                class="native-key-bindings"
+                name="firstname"
+                value=""
+                tab-index="-1"
+            /> -->
+            <select name="genre" id="genre">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+            </select>
+            
+            <button class="shareSlackButton" id="submitShareText">Share</button>
+            <button class="shareSlackButton" id="closePrompt">Close</button>
+        </form>
+    </div>
+    
