@@ -23,7 +23,10 @@
             padding: 0px 0 0px 8px;
             line-height: 20px !important;
         }
-        #tree-playlist li:hover {
+        .playlist-li :hover {
+            background-color: #2f333d;
+        }
+        .playlist-parent-li :hover .list-tab {
             background-color: #2f333d;
         }
 
@@ -301,6 +304,18 @@
 
         .show {
             display: block;
+        }
+        .share-icon {
+           opacity: 0;
+        }
+        .share-parent-icon  {
+            opacity: 0;
+        }
+        .playlist-parent-li :hover  .share-parent-icon {
+            opacity: 1;
+        }
+        .playlist-li :hover .share-icon {
+            opacity: 1;
         }
     </style>
 
