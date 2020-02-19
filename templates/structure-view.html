@@ -2,16 +2,31 @@
     <style>
         /* @import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css"); */
         .tree-panel {
-            height: 100%;
+            height: 50%;
             overflow: scroll;
+            padding-bottom: 120px;
+        }
+        .recommend-tree-panel {
+            height: 40%;
+            overflow: hidden;
+            padding-bottom: 120px;
         }
 
-        #tree-playlist li {
+        .playlist-parent-li {
             cursor: pointer;
             margin-bottom: 0px;
             padding: 4px 0 4px 8px;
         }
-        #tree-playlist li:hover {
+        .playlist-li {
+            cursor: pointer;
+            margin-bottom: 0px;
+            padding: 0px 0 0px 8px;
+            line-height: 20px !important;
+        }
+        .playlist-li :hover {
+            background-color: #2f333d;
+        }
+        .playlist-parent-li :hover .list-tab {
             background-color: #2f333d;
         }
 
@@ -30,6 +45,12 @@
         .symbol-mixed-block.list-tab {
             padding-left: 6px;
         }
+        /* .symbol-mixed-block {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 17px;
+        } */
 
         hr {
             margin-top: 2px;
@@ -39,7 +60,7 @@
         }
 
         .vertical-menu {
-            width: 400px;
+            
             padding-left: 14px;
             padding-right: 14px;
         }
@@ -111,7 +132,7 @@
         }
 
         .symbol-mixed-block {
-            height: 16px;
+            height: 20px;
         }
 
         .spotify-menus:before {
@@ -128,7 +149,16 @@
             float: left;
             margin-right: 6px;
         }
-
+        li#recomendation-section :hover {
+            background-color: none !important;
+        }
+        li#recomendation-section {
+            margin-top: 25px;
+        }
+        .title-header {
+            background-color: #2f333d;
+            height: 34px;
+        }
         li.play-list-angle-right:before {
             content: '\f078';
             font-family: 'Octicons Regular';
@@ -197,6 +227,9 @@
         .playlist-head {
             padding: 9px 15px 10px 15px;
         }
+        .recommend-head {
+            padding: 5px 15px 10px 15px;
+        }
         .showLeft {
             text-shadow: none !important;
             color: #fff !important;
@@ -262,7 +295,7 @@
             cursor: pointer;
         }
         .dropdown-content :hover {
-            background-color: #9f9f9f
+            background-color: #9f9f9f;
         }
 
         .dropdown a:hover {
@@ -272,17 +305,29 @@
         .show {
             display: block;
         }
+        .share-icon {
+           opacity: 0;
+        }
+        .share-parent-icon  {
+            opacity: 0;
+        }
+        .playlist-parent-li :hover  .share-parent-icon {
+            opacity: 1;
+        }
+        .playlist-li :hover .share-icon {
+            opacity: 1;
+        }
     </style>
-    <div class="sv-toolbox block playlist-head">
+
+    <div class="sv-toolbox block playlist-head title-header">
         <span style="float: left;">MUSIC TIME : MY PLAYLISTS</span>
 
         <div class="dropdown" id="sortDiv">
-            
             <!-- three dots -->
             <ul
                 class="dropbtn icons btn-right showLeft"
                 id="sortDropDown"
-                style="width: 5px;"
+                style="width: 5px; padding-right: 23px;"
             >
                 <li></li>
                 <li></li>
@@ -293,79 +338,110 @@
                 <span id="alphabetically">Sort A-Z</span>
                 <span id="sortToOriginal">Sort Latest</span>
             </div>
-
-            
         </div>
-        <span style="float: right;padding-right: 10px;">
-                <img
-                    alt=""
-                    style="cursor: pointer; display: none;margin-top: 3px;"
-                    id="refresh-treeview"
-                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTIiIGhlaWdodD0iMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgLTEyOCAxNTM2IDE3OTIiIHN0eWxlPSItbXMtdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTsgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyB0cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyB2ZXJ0aWNhbC1hbGlnbjogLTAuMTQzZW07Ij48cGF0aCBkPSJNMTUxMSA5MjhxMCA1LTEgN3EtNjQgMjY4LTI2OCA0MzQuNVQ3NjQgMTUzNnEtMTQ2IDAtMjgyLjUtNTVUMjM4IDEzMjRsLTEyOSAxMjlxLTE5IDE5LTQ1IDE5dC00NS0xOXQtMTktNDVWOTYwcTAtMjYgMTktNDV0NDUtMTloNDQ4cTI2IDAgNDUgMTl0MTkgNDV0LTE5IDQ1bC0xMzcgMTM3cTcxIDY2IDE2MSAxMDJ0MTg3IDM2cTEzNCAwIDI1MC02NXQxODYtMTc5cTExLTE3IDUzLTExN3E4LTIzIDMwLTIzaDE5MnExMyAwIDIyLjUgOS41dDkuNSAyMi41em0yNS04MDB2NDQ4cTAgMjYtMTkgNDV0LTQ1IDE5aC00NDhxLTI2IDAtNDUtMTl0LTE5LTQ1dDE5LTQ1bDEzOC0xMzhROTY5IDI1NiA3NjggMjU2cS0xMzQgMC0yNTAgNjVUMzMyIDUwMHEtMTEgMTctNTMgMTE3cS04IDIzLTMwIDIzSDUwcS0xMyAwLTIyLjUtOS41VDE4IDYwOHYtN3E2NS0yNjggMjcwLTQzNC41VDc2OCAwcTE0NiAwIDI4NCA1NS41VDEyOTcgMjEybDEzMC0xMjlxMTktMTkgNDUtMTl0NDUgMTl0MTkgNDV6IiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg=="
-                />
-            </span>
+        <span style="float: right;padding-right: 10px; padding-right: 25px;">
+            <img
+                alt=""
+                style="cursor: pointer; display: none;margin-top: 3px;"
+                id="refresh-treeview"
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTIiIGhlaWdodD0iMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgLTEyOCAxNTM2IDE3OTIiIHN0eWxlPSItbXMtdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTsgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyB0cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyB2ZXJ0aWNhbC1hbGlnbjogLTAuMTQzZW07Ij48cGF0aCBkPSJNMTUxMSA5MjhxMCA1LTEgN3EtNjQgMjY4LTI2OCA0MzQuNVQ3NjQgMTUzNnEtMTQ2IDAtMjgyLjUtNTVUMjM4IDEzMjRsLTEyOSAxMjlxLTE5IDE5LTQ1IDE5dC00NS0xOXQtMTktNDVWOTYwcTAtMjYgMTktNDV0NDUtMTloNDQ4cTI2IDAgNDUgMTl0MTkgNDV0LTE5IDQ1bC0xMzcgMTM3cTcxIDY2IDE2MSAxMDJ0MTg3IDM2cTEzNCAwIDI1MC02NXQxODYtMTc5cTExLTE3IDUzLTExN3E4LTIzIDMwLTIzaDE5MnExMyAwIDIyLjUgOS41dDkuNSAyMi41em0yNS04MDB2NDQ4cTAgMjYtMTkgNDV0LTQ1IDE5aC00NDhxLTI2IDAtNDUtMTl0LTE5LTQ1dDE5LTQ1bDEzOC0xMzhROTY5IDI1NiA3NjggMjU2cS0xMzQgMC0yNTAgNjVUMzMyIDUwMHEtMTEgMTctNTMgMTE3cS04IDIzLTMwIDIzSDUwcS0xMyAwLTIyLjUtOS41VDE4IDYwOHYtN3E2NS0yNjggMjcwLTQzNC41VDc2OCAwcTE0NiAwIDI4NCA1NS41VDEyOTcgMjEybDEzMC0xMjlxMTktMTkgNDUtMTl0NDUgMTl0MTkgNDV6IiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==" width="13" height="13"
+            />
+        </span>
     </div>
-    <div class="loader" id="loader" style="display: none"></div>
-    <div class="vertical-menu">
-        <a
-            href="#"
-            id="spotify-status"
-            title="you have connected to spotify"
-            style="display: none"
-        ></a>
-
-        <a
-            href="#"
-            id="spotify-connect"
-            title="connect to spotify"
-            class="spotify-menus"
-        >
-            Connect Spotify</a
-        >
-
-        <a
-            href="#"
-            id="spotify-player-device"
-            title=""
-            style="display: none"
-            class="spotify-menus"
-        ></a>
-        <a
-            href="#"
-            id="web-analytics"
-            title=""
-            style="display: none"
-            class="paw-menus"
-        >
-            See Web Analytics</a
-        >
-        <img
-            width="11"
-            height="11"
-            class="divider"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHklEQVQ4jWMYBcMBMPKuffifEo8wjSaDEQ8YGBgYAPSYAp6YQSEPAAAAAElFTkSuQmCC"
-        />
-        <a
-            href="#"
-            id="spotify-refresh-playlist"
-            title="You Want to Refresh My AI Spotify Playlist"
-            style="display: none"
-            >Refresh My AI Playlist</a
-        >
-    </div>
+    <div class="loader" id="loader" style="display: none; margin-left:38px; "></div>
     <div class="tree-panel" id="tree-content">
+        <!-- <div class="loader" id="loader" style="display: none"></div> -->
+        <div class="vertical-menu">
+            <a
+                href="#"
+                id="spotify-status"
+                title="you have connected to spotify"
+                style="display: none"
+            ></a>
+
+            <a
+                href="#"
+                id="spotify-connect"
+                title="connect to spotify"
+                class="spotify-menus"
+            >
+                Connect Spotify</a
+            >
+
+            <a
+                href="#"
+                id="spotify-player-device"
+                title=""
+                style="display: none"
+                class="spotify-menus"
+            ></a>
+            <a
+                href="#"
+                id="web-analytics"
+                title=""
+                style="display: none"
+                class="paw-menus"
+            >
+                See Web Analytics</a
+            >
+            <img
+                width="11"
+                height="11"
+                class="divider"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHklEQVQ4jWMYBcMBMPKuffifEo8wjSaDEQ8YGBgYAPSYAp6YQSEPAAAAAElFTkSuQmCC"
+            />
+            <a
+                href="#"
+                id="spotify-refresh-playlist"
+                title="You Want to Refresh My AI Spotify Playlist"
+                style="display: none"
+                >Refresh My AI Playlist</a
+            >
+        </div>
+
         <ol
             class="full-menu list-tree has-collapsable-children"
             id="tree-playlist"
         ></ol>
     </div>
+    <div id="recommend-head-bar" style="display:none;" class="sv-toolbox block playlist-head title-header">
+        <span style="float: left;">RECOMMENDATIONS</span>
+
+        <span style="float: right;">
+                <img alt="" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xMy4yNDY3IDExLjQ1N0wxMC40OTk4IDcuMDM5MDZWMy41SDEwLjY4NzNDMTAuOTk5IDMuNSAxMS4yNDk4IDMuMjQ5MjIgMTEuMjQ5OCAyLjkzNzVWMi41NjI1QzExLjI0OTggMi4yNTA3OCAxMC45OTkgMiAxMC42ODczIDJINS44MTIyOEM1LjUwMDU2IDIgNS4yNDk3OCAyLjI1MDc4IDUuMjQ5NzggMi41NjI1VjIuOTM3NUM1LjI0OTc4IDMuMjQ5MjIgNS41MDA1NiAzLjUgNS44MTIyOCAzLjVINS45OTk3OFY3LjAzOTA2TDMuMjUyOTEgMTEuNDU3QzIuNTY2MTkgMTIuNTYwOSAzLjM1ODM3IDE0IDQuNjYxNSAxNEgxMS44MzgxQzEzLjE0MzUgMTQgMTMuOTMzNCAxMi41NTg2IDEzLjI0NjcgMTEuNDU3VjExLjQ1N1pNNi4yMzE4MSA5LjVMNy4zNjE1IDcuNjgxMjVDNy40NDgyMiA3LjU1OTM3IDcuNDk3NDQgNy40MDkzOCA3LjQ5NzQ0IDcuMjVWMy41SDguOTk3NDRWNy4yNUM4Ljk5NzQ0IDcuNDExNzIgOS4wNDkgNy41NTkzNyA5LjEzMzM3IDcuNjgxMjVMMTAuMjYzMSA5LjVINi4yMzE4MVY5LjVaIiBmaWxsPSIjNEY1MjU4Ii8+DQo8L3N2Zz4NCg==" 
+                style="cursor: pointer;"
+                id="category-recommendation"
+                />
+                <img
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xMy40MzY5IDJIMi41NjMxNUMyLjA2MzUxIDIgMS44MTE0IDIuNjA2MjMgMi4xNjU0MiAyLjk2MDI2TDYuNSA3LjI5NTQ5VjEyLjEyNUM2LjUgMTIuMzA4NSA2LjU4OTU1IDEyLjQ4MDUgNi43Mzk5MyAxMi41ODU4TDguNjE0OTMgMTMuODk3OUM4Ljk4NDg0IDE0LjE1NjggOS41IDEzLjg5NDQgOS41IDEzLjQzN1Y3LjI5NTQ5TDEzLjgzNDcgMi45NjAyNkMxNC4xODggMi42MDY5NCAxMy45Mzc2IDIgMTMuNDM2OSAyWiIgZmlsbD0iIzRGNTI1OCIvPg0KPC9zdmc+DQo=" 
+                    alt=""
+                    style="cursor: pointer;"
+                    id="genre-recommendation"
+                />
+                <img
+                    alt=""
+                    style="cursor: pointer; "
+                    id="refresh-recommendation"
+                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTIiIGhlaWdodD0iMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgLTEyOCAxNTM2IDE3OTIiIHN0eWxlPSItbXMtdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTsgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyB0cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyB2ZXJ0aWNhbC1hbGlnbjogLTAuMTQzZW07Ij48cGF0aCBkPSJNMTUxMSA5MjhxMCA1LTEgN3EtNjQgMjY4LTI2OCA0MzQuNVQ3NjQgMTUzNnEtMTQ2IDAtMjgyLjUtNTVUMjM4IDEzMjRsLTEyOSAxMjlxLTE5IDE5LTQ1IDE5dC00NS0xOXQtMTktNDVWOTYwcTAtMjYgMTktNDV0NDUtMTloNDQ4cTI2IDAgNDUgMTl0MTkgNDV0LTE5IDQ1bC0xMzcgMTM3cTcxIDY2IDE2MSAxMDJ0MTg3IDM2cTEzNCAwIDI1MC02NXQxODYtMTc5cTExLTE3IDUzLTExN3E4LTIzIDMwLTIzaDE5MnExMyAwIDIyLjUgOS41dDkuNSAyMi41em0yNS04MDB2NDQ4cTAgMjYtMTkgNDV0LTQ1IDE5aC00NDhxLTI2IDAtNDUtMTl0LTE5LTQ1dDE5LTQ1bDEzOC0xMzhROTY5IDI1NiA3NjggMjU2cS0xMzQgMC0yNTAgNjVUMzMyIDUwMHEtMTEgMTctNTMgMTE3cS04IDIzLTMwIDIzSDUwcS0xMyAwLTIyLjUtOS41VDE4IDYwOHYtN3E2NS0yNjggMjcwLTQzNC41VDc2OCAwcTE0NiAwIDI4NCA1NS41VDEyOTcgMjEybDEzMC0xMjlxMTktMTkgNDUtMTl0NDUgMTl0MTkgNDV6IiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg=="
+                    width="13" height="13"
+                />
+                
+            </span>
+    </div>
+    <div class="recommend-tree-panel" id="tree-recommend-content">
+        <ol
+            class="full-menu list-tree has-collapsable-children"
+            id="tree-recommend-playlist"
+        ></ol>
+    </div>
+
     <!-- <div class="mask">
     <div>&nbsp;</div>
     <span class='loading loading-spinner-small inline-block'></span>
   </div> -->
 </div>
 
-<li
+<!-- <li
     node-id="Liked_Songs"
     class="list-item play-list collapsed"
     title="Liked Songs"
@@ -411,4 +487,4 @@
             </div>
         </li>
     </ol>
-</li>
+</li> -->
