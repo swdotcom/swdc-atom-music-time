@@ -85,6 +85,15 @@
             margin-right: 6px;
         }
 
+        #loaderdiv:before {
+            content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUgOC43NzY2NlY3LjE3MzIzTDEzLjA2IDYuNTMxODVMMTIuNjEgNS40Mzk1MUwxMy40OSAzLjU5NTU2TDEyLjM2IDIuNDYzMTRMMTAuNTUgMy4zNzUwOUw5LjQ2IDIuOTI0MTJMOC43NyAxSDcuMTdMNi41NCAyLjk0NDE3TDUuNDMgMy4zOTUxM0wzLjU5IDIuNTEzMjRMMi40NiAzLjY0NTY3TDMuMzcgNS40NTk1NkwyLjkyIDYuNTUxOUwxIDcuMjMzMzZWOC44MjY3N0wyLjk0IDkuNDY4MTVMMy4zOSAxMC41NjA1TDIuNTEgMTIuNDA0NEwzLjY0IDEzLjUzNjlMNS40NSAxMi42MjQ5TDYuNTQgMTMuMDc1OUw3LjIzIDE1SDguODJMOS40NSAxMy4wNTU4TDEwLjU2IDEyLjYwNDlMMTIuNCAxMy40ODY4TDEzLjUzIDEyLjM1NDNMMTIuNjEgMTAuNTQwNEwxMy4wOCA5LjQ0ODFMMTUgOC43NTY2MlY4Ljc3NjY2Wk04IDExLjAxMTVDNi4zNCAxMS4wMTE1IDUgOS42Njg1OCA1IDguMDA1MDFDNSA2LjM0MTQ1IDYuMzQgNC45OTg1NyA4IDQuOTk4NTdDOS42NiA0Ljk5ODU3IDExIDYuMzQxNDUgMTEgOC4wMDUwMUMxMSA5LjY2ODU4IDkuNjYgMTEuMDExNSA4IDExLjAxMTVaIiBmaWxsPSIjNDJBNUY1Ii8+DQo8L3N2Zz4NCg==');
+            vertical-align: -2px;
+            width: 12px;
+            height: 12px;
+            margin-right: 3px;
+        }
+
+
         /* ol#tree-playlist li:first-child {
       content: url('https://app.software.com/favicon.ico');
       vertical-align: -0.125em;
@@ -363,11 +372,12 @@
             />
         </span>
     </div>
-    <div
-        class="loader"
-        id="loader"
-        style="display: none; margin-left:38px; "
-    ></div>
+    <div  id="loaderdiv" style="padding: 0px 0px 10px 40px;">
+        <span>
+            Loading...
+        </span>
+    </div>
+
     <div class="tree-panel" id="tree-content">
         <!-- <div class="loader" id="loader" style="display: none"></div> -->
         <div class="vertical-menu">
