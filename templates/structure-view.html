@@ -174,6 +174,16 @@
             margin-right: 6px;
         }
 
+        /* .search-icon::before {
+            content: url('data:image/svg+xml,%3Csvg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16"%3E%3Cpath d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" fill="%2342A5F5"%3E%3C/path%3E%3C/svg%3E');
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: 8px;
+        } */
+
         .open-dashboard::before {
             content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC40MDAwMyA1LjE5OTk5SDcuNjAwMDRWNC4zOTk5OUg4LjQwMDAzVjUuMTk5OTlaTTExLjU5OTkgNy41OTk5MUgxMC44VjguMzk5OUgxMS41OTk5VjcuNTk5OTFaTTUuOTk5OTEgNS4xOTk5N0g1LjE5OTkyVjUuOTk5OTZINS45OTk5MVY1LjE5OTk3Wk01LjE5OTkzIDcuNTk5OTFINC4zOTk5NFY4LjM5OTlINS4xOTk5M1Y3LjU5OTkxWk0xNCAzLjE5OTk3TDEzLjYgMi43OTk5OEw4LjQwMDA0IDYuNzk5OTRDOC4zNTIwNCA2Ljc4Mzk0IDcuNjAwMDUgNi43OTk5NCA3LjYwMDA1IDYuNzk5OTRDNy4xNjAwNSA2Ljc5OTk0IDYuODAwMDYgNy4xNTk5MyA2LjgwMDA2IDcuNTk5OTNWOC4zOTk5MkM2LjgwMDA2IDguODM5OTEgNy4xNjAwNSA5LjE5OTkxIDcuNjAwMDUgOS4xOTk5MUg4LjQwMDA0QzguODQwMDQgOS4xOTk5MSA5LjIwMDAzIDguODM5OTEgOS4yMDAwMyA4LjM5OTkyVjcuNjYzOTNMMTQgMy4xOTk5N1pNMTIuNzI3OSA2LjQ3MTk1QzEyLjg3OTkgNi45NTk5NSAxMi45Njc5IDcuNDcxOTQgMTIuOTY3OSA3Ljk5OTkzQzEyLjk2NzkgMTAuNzM1OSAxMC43NDM5IDEyLjk1OTkgOC4wMDc5MyAxMi45NTk5QzUuMjcxOTYgMTIuOTU5OSAzLjAzOTk5IDEwLjczNTkgMy4wMzk5OSA3Ljk5OTkzQzMuMDM5OTkgNS4yNjM5NiA1LjI2Mzk2IDMuMDM5OTkgNy45OTk5MyAzLjAzOTk5QzguOTU5OTIgMy4wMzk5OSA5Ljg0NzkxIDMuMzExOTkgMTAuNjE1OSAzLjc5MTk4TDExLjM2NzkgMy4wMzk5OUMxMC40MTU5IDIuMzkyIDkuMjU1OTIgMiA4LjAwNzkzIDJDNC42ODc5NyAyIDIgNC42ODc5NyAyIDcuOTk5OTNDMiAxMS4zMTE5IDQuNjg3OTcgMTMuOTk5OSA3Ljk5OTkzIDEzLjk5OTlDMTEuMzExOSAxMy45OTk5IDEzLjk5OTkgMTEuMzExOSAxMy45OTk5IDcuOTk5OTNDMTMuOTk5OSA3LjE3NTk0IDEzLjgzOTkgNi4zODM5NSAxMy41Mjc5IDUuNjcxOTZMMTIuNzI3OSA2LjQ3MTk1WiIgZmlsbD0iI0E2NDFGNCIvPg0KPC9zdmc+DQo=');
             width: 16px;
@@ -323,12 +333,13 @@
         .dropdown-content {
             display: none;
             position: relative;
-            margin-top: 22px;
+            margin-top: 16px;
             background-color: #f9f9f9;
             min-width: 160px;
             overflow: auto;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
         }
 
         .dropdown-content span {
@@ -367,6 +378,17 @@
         .play-control-panel img {
             opacity: 0.6;
         }
+        .search-input {
+            width: 100%;
+            display: flex;
+            color: black;
+            height: 30px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        .search-button {
+            float: right;
+        }
     </style>
 
     <div class="sv-toolbox block playlist-head title-header">
@@ -388,18 +410,30 @@
             </div>
             <img
                 alt=""
-                style="cursor: pointer; display: none;margin-top: 3px;"
+                style="cursor: pointer; display: none; margin-top: 3px;"
                 id="refresh-treeview"
                 title="Reconcile playlists"
                 src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTIiIGhlaWdodD0iMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgLTEyOCAxNTM2IDE3OTIiIHN0eWxlPSItbXMtdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTsgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyB0cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyB2ZXJ0aWNhbC1hbGlnbjogLTAuMTQzZW07Ij48cGF0aCBkPSJNMTUxMSA5MjhxMCA1LTEgN3EtNjQgMjY4LTI2OCA0MzQuNVQ3NjQgMTUzNnEtMTQ2IDAtMjgyLjUtNTVUMjM4IDEzMjRsLTEyOSAxMjlxLTE5IDE5LTQ1IDE5dC00NS0xOXQtMTktNDVWOTYwcTAtMjYgMTktNDV0NDUtMTloNDQ4cTI2IDAgNDUgMTl0MTkgNDV0LTE5IDQ1bC0xMzcgMTM3cTcxIDY2IDE2MSAxMDJ0MTg3IDM2cTEzNCAwIDI1MC02NXQxODYtMTc5cTExLTE3IDUzLTExN3E4LTIzIDMwLTIzaDE5MnExMyAwIDIyLjUgOS41dDkuNSAyMi41em0yNS04MDB2NDQ4cTAgMjYtMTkgNDV0LTQ1IDE5aC00NDhxLTI2IDAtNDUtMTl0LTE5LTQ1dDE5LTQ1bDEzOC0xMzhROTY5IDI1NiA3NjggMjU2cS0xMzQgMC0yNTAgNjVUMzMyIDUwMHEtMTEgMTctNTMgMTE3cS04IDIzLTMwIDIzSDUwcS0xMyAwLTIyLjUtOS41VDE4IDYwOHYtN3E2NS0yNjggMjcwLTQzNC41VDc2OCAwcTE0NiAwIDI4NCA1NS41VDEyOTcgMjEybDEzMC0xMjlxMTktMTkgNDUtMTl0NDUgMTl0MTkgNDV6IiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg=="
             />
             <img
                 alt=""
-                style="cursor: pointer; display: none;margin-top: 3px;"
+                style="cursor: pointer; display: none; margin-top: 4px;"
                 src="data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='search' class='svg-inline--fa fa-search fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='14' height='14'%3E%3Cpath d='M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z' fill='%2342A5F5'%3E%3C/path%3E%3C/svg%3E"
                 id="song-search"
                 title="Search songs"
             />
+            <!-- <div class="dropdown" id="sortDiv">
+                <ul
+                    class="dropbtn icons search-icon showLeft"
+                    id="sortDropDown"
+                    style="width: 5px; padding-right: 23px;"
+                    title="Sort"
+                ></ul>
+
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." />
+                </div>
+            </div> -->
         </span>
     </div>
     <div id="loaderdiv" style="padding: 0px 0px 10px 40px; display: none">
