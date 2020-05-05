@@ -2,13 +2,13 @@
     "name": "music-time",
     "displayName": "Music Time",
     "main": "./lib/Activator",
-    "version": "0.2.4",
+    "version": "1.0.0",
     "scripts": {
         "test": "mocha"
     },
     "description": "Music Time is an open source plugin that curates and launches playlists for coding right from your editor.",
     "keywords": [
-        "code time",
+        "Music Time",
         "time",
         "software",
         "software.com",
@@ -27,8 +27,8 @@
     },
     "configSchema": {
         "showGitMetrics": {
-            "title": "Show Code Time git metrics",
-            "description": "Code Time weekly git commit metrics",
+            "title": "Show Music Time git metrics",
+            "description": "Music Time weekly git commit metrics",
             "type": "boolean",
             "default": false,
             "order": 2
