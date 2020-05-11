@@ -12,7 +12,7 @@ describe('SwdcAtom', () => {
 
   beforeEach(() => {
     workspaceElement = atom.views.getView(atom.workspace);
-    activationPromise = atom.packages.activatePackage('swdc-atom');
+    activationPromise = atom.packages.activatePackage('swdc-atom-musictime');
   });
 
   describe('when the swdc-atom:toggle event is triggered', () => {
