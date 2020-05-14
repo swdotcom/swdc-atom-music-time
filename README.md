@@ -1,31 +1,26 @@
 <br />
 
 <h1 align="center">
-  <img src="https://swdc-vscode.s3-us-west-1.amazonaws.com/software-headphones.png" height="30px" />&nbsp
+  <img src="https://swdc-vscode.s3-us-west-1.amazonaws.com/software-headphones.png" height="30px" />
   Music Time
 </h1>
 
 <br />
 
-<p align="center"><a href="https://www.software.com">Music Time</a> is an Atom extension that discovers the most productive music to listen to as you code.
+<p align="center"><a href="https://www.software.com/music-time">Music Time</a> is an Atom extension that discovers the most productive music to listen to as you code.
 </p>
 
 <br />
 
-<!--
+
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=softwaredotcom.music-time">
-    <img alt="Marketplace" src="https://vsmarketplacebadge.apphb.com/version-short/softwaredotcom.music-time.svg"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=softwaredotcom.music-time">
-    <img alt="Installs" src="https://vsmarketplacebadge.apphb.com/installs-short/softwaredotcom.music-time.svg"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=softwaredotcom.music-time">
-    <img alt="Rating" src="https://vsmarketplacebadge.apphb.com/rating-short/softwaredotcom.music-time.svg"></a>
-  <a href="https://aka.ms/vsls">
-    <img alt="Live Share enabled" src="https://aka.ms/vsls-badge"></a>
+  <a href="https://atom.io/packages/music-time">
+    <img alt="Version" src="https://img.shields.io/apm/v/music-time?label=version"></a>
+  <a href="https://atom.io/packages/music-time">
+    <img alt="Downloads" src="https://img.shields.io/apm/dm/music-time"></a>
 </p>
 
 <br />
--->
 
 ## Features
 
