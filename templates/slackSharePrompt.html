@@ -45,6 +45,7 @@
         background-color: #252830;
         padding: 20px;
     }
+
     #labelchannel {
         color: black;
         font-size: 14px !important;
@@ -67,24 +68,30 @@
         background-image: url(https://i.imgur.com/GnyDvKN.png);
         display: none;
     }
+
+    .continue-button {
+        float: right;
+        margin-bottom: 10px;
+        cursor: pointer
+    }
 </style>
 
 <div id="slackSharePromptDiv">
     <form>
         <div class="slack-error" id="slack-error">Message is required !</div>
-        <label for="msgText" id="labelChannel"
-            >Enter a message to appear in the selected channel</label
-        >
+        <span style="float:right;margin-bottom: 10px;cursor:pointer">
+          <img id="close-search" alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgc3R5bGU9Ii1tcy10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7Ij48cGF0aCBkPSJNNjg1LjQgMzU0LjhjMC00LjQtMy42LTgtOC04bC02NiAuM0w1MTIgNDY1LjZsLTk5LjMtMTE4LjRsLTY2LjEtLjNjLTQuNCAwLTggMy41LTggOGMwIDEuOS43IDMuNyAxLjkgNS4ybDEzMC4xIDE1NUwzNDAuNSA2NzBhOC4zMiA4LjMyIDAgMCAwLTEuOSA1LjJjMCA0LjQgMy42IDggOCA4bDY2LjEtLjNMNTEyIDU2NC40bDk5LjMgMTE4LjRsNjYgLjNjNC40IDAgOC0zLjUgOC04YzAtMS45LS43LTMuNy0xLjktNS4yTDU1My41IDUxNWwxMzAuMS0xNTVjMS4yLTEuNCAxLjgtMy4zIDEuOC01LjJ6IiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik01MTIgNjVDMjY0LjYgNjUgNjQgMjY1LjYgNjQgNTEzczIwMC42IDQ0OCA0NDggNDQ4czQ0OC0yMDAuNiA0NDgtNDQ4Uzc1OS40IDY1IDUxMiA2NXptMCA4MjBjLTIwNS40IDAtMzcyLTE2Ni42LTM3Mi0zNzJzMTY2LjYtMzcyIDM3Mi0zNzJzMzcyIDE2Ni42IDM3MiAzNzJzLTE2Ni42IDM3Mi0zNzIgMzcyeiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=" />
+        </span>
+        <label for="msgText" id="labelChannel">Enter a message to appear in the selected channel</label>
         <input
             type="text"
             id="msgText"
             class="native-key-bindings"
-            name="firstname"
-            value=""
+            name="msgText"
+            value="Check out this song"
             tab-index="-1"
         />
 
-        <button class="btn btn-primary" id="submitShareText">Create</button>
-        <button class="shareSlackButton" id="closePrompt">Close</button>
+        <button class="btn btn-primary continue-button" id="submitShareText">Continue</button>
     </form>
 </div>
