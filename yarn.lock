@@ -166,10 +166,10 @@ clone@2.x:
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
   integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
 
-cody-music@2.9.20:
-  version "2.9.20"
-  resolved "https://registry.yarnpkg.com/cody-music/-/cody-music-2.9.20.tgz#315f9a71543ae5375f875208605787fc928f8d13"
-  integrity sha512-er6NIDPJi8tZ1DaVIfO/WSqaFiM4gGH1+Nb/efxlUzsKRofYEQoYgMzF7ObaS5tuy2wwptBXSYu+oq7pV4712w==
+cody-music@2.9.25:
+  version "2.9.25"
+  resolved "https://registry.yarnpkg.com/cody-music/-/cody-music-2.9.25.tgz#785be7aa3d14b75e20f8477a668b7b44409c2079"
+  integrity sha512-Y8ERgSSJDys70L2+mgSD1D/BAE+/1I2EmcwTW0r7DIX4ObzoJWdart+EKazBwxMlZ1UhOx15Jazx4m+AqQ37Yg==
   dependencies:
     axios "^0.19.0"
     moment-timezone "^0.5.28"
