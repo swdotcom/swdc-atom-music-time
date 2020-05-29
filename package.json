@@ -1,12 +1,12 @@
 {
     "name": "music-time",
-    "displayName": "Music Time",
+    "displayName": "Music Time for Spotify",
     "main": "./lib/Activator",
     "version": "1.9.4",
     "scripts": {
         "test": "mocha"
     },
-    "description": "Music Time is an open source plugin that curates and launches playlists for coding right from your editor.",
+    "description": "Music Time for Spotify is an Atom extension that discovers the most productive music to listen to as you code.",
     "keywords": [
         "music-time",
         "music",
