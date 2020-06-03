@@ -27,15 +27,6 @@
     "engines": {
         "atom": ">=1.0.0 <2.0.0"
     },
-    "configSchema": {
-        "showGitMetrics": {
-            "title": "Show Music Time git metrics",
-            "description": "Music Time weekly git commit metrics",
-            "type": "boolean",
-            "default": false,
-            "order": 2
-        }
-    },
     "dependencies": {
         "@slack/web-api": "^5.0.1",
         "axios": "^0.19.0",
@@ -55,11 +46,6 @@
             "type": "object",
             "title": "Music Time",
             "properties": {
-                "showGitMetrics": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Git metrics"
-                },
                 "showWeeklyRanking": {
                     "type": "boolean",
                     "default": false,
