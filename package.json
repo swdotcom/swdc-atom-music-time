@@ -2,7 +2,7 @@
     "name": "music-time",
     "displayName": "Music Time for Spotify",
     "main": "./lib/Activator",
-    "version": "1.9.7",
+    "version": "1.9.8",
     "scripts": {
         "test": "mocha"
     },
