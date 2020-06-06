@@ -12,9 +12,6 @@
 
 <i>Music Time requires a Spotify account. We currently do not support Apple Music, Google Play, or any other players, but may in a future plugin.</i>
 
-<br />
-
-
 <p align="center">
   <a href="https://atom.io/packages/music-time">
     <img alt="Version" src="https://img.shields.io/apm/v/music-time?label=version"></a>
@@ -22,15 +19,13 @@
     <img alt="Downloads" src="https://img.shields.io/apm/dm/music-time"></a>
 </p>
 
-<br />
-
 ## Features
 
 -   **Integrated player controls**: Control your music right from the status bar of your editor.
 
 -   **Embedded playlists**: Browse and play your Spotify playlists and songs from your editor.
 
--   **AI playlists**: Get a personalized AI playlist generated using deep learning to help you focus.
+-   **AI playlists**: Get a personalized AI playlist generated using machine learning to help you focus.
 
 -   **Metrics profile**: Learn how the underlying metrics of music (including tempo, loudness, speechiness, energy, and valence) impact how you code.
 
@@ -42,7 +37,7 @@
 
 -   **Slack integration**: Connect Slack to share songs and playlists in channels in your workspace.
 
-You can also check out the [cody-music](https://www.npmjs.com/package/cody-music) npm package for more information about how this extension works.
+Music Time is built on the [Code Time](https://www.software.com/code-time) plugin and performs machine learning against a range of music metrics plus productivity data from over 70,000 developers to determine song recommendations. You can also check out the [cody-music](https://www.npmjs.com/package/cody-music) npm package for more information about how this extension works.
 
 <br />
 
@@ -64,7 +59,7 @@ Click on any song in your list of playlists. Music Time will prompt you to open 
 
 ### **3. Generate your personal playlist**
 
-Click the **Generate AI Playlist** button to get a personalized AI playlist generated using deep learning. Your AI Top 40 playlist is initially based on your liked songs and global developer data, but will improve as you listen to more music while you code.
+Click the **Generate AI Playlist** button to get a personalized AI playlist generated using machine learning. Your AI Top 40 playlist is initially based on your liked songs and global developer data, but will improve as you listen to more music while you code.
 
 <p align="center" style="margin: 0 10%">
   <img src="https://swdc-atom.s3-us-west-1.amazonaws.com/music-time-ai-playlist.png" alt="Music Time AI Top 40" />
