@@ -117,7 +117,7 @@ Discover how the underlying [metrics of music](https://app.software.com/music/me
   <img src="https://swdc-vscode.s3-us-west-1.amazonaws.com/music-metrics.png" alt="Music Time music metrics" />
 </p>
 
-### **4. Visualize your Music Time metrics**
+### **4. Visualize your Code Time metrics**
 
 Music Time is built on our [Code Time plugin](https://www.software.com/code-time). In the web app, under settings, you can enable "Code Time" to see your Code Time data—such as your keystrokes, time by file and project, and lines of code—which is used calculate to your productivity scores. [Visit your feed](https://app.software.com) to see simple visualizations of your Code Time data, such as a rolling heatmap of your top programming times by hour of the day.
 
