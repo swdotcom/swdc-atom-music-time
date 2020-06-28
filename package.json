@@ -2,7 +2,7 @@
     "name": "music-time",
     "displayName": "Music Time for Spotify",
     "main": "./lib/Activator",
-    "version": "2.0.11",
+    "version": "2.0.12",
     "scripts": {
         "test": "mocha"
     },
@@ -34,7 +34,7 @@
         "clipboardy": "^2.1.0",
         "cody-music": "^2.9.31",
         "crypto": "^1.0.1",
-        "file-it": "^1.0.22",
+        "file-it": "^1.0.23",
         "jquery": "^3.5.0",
         "moment-timezone": "^0.5.25",
         "node-cache": "^5.1.1",
