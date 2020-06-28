@@ -53,6 +53,11 @@
   resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.0.tgz#2b35eccfcee7d38cd72ad99232fbd58bffb3c84d"
   integrity sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==
 
+"@types/universalify@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/universalify/-/universalify-1.0.0.tgz#0fecec0da49839da8b705ddc714600c480ea3dee"
+  integrity sha512-Cqm/s2DU7YxTcTtQZkfG7kyOULQKsl0Mpd3dKAm0CbSStcRsQdy1nctCBGCmyNvxWUEYReqWkBIUvNHBN/Ja6w==
+
 afinn-165@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/afinn-165/-/afinn-165-1.0.4.tgz#3abf6b8922dd5db84d84e0abd155924381dd73a4"
@@ -166,10 +171,10 @@ clone@2.x:
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
   integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
 
-cody-music@2.9.25:
-  version "2.9.25"
-  resolved "https://registry.yarnpkg.com/cody-music/-/cody-music-2.9.25.tgz#785be7aa3d14b75e20f8477a668b7b44409c2079"
-  integrity sha512-Y8ERgSSJDys70L2+mgSD1D/BAE+/1I2EmcwTW0r7DIX4ObzoJWdart+EKazBwxMlZ1UhOx15Jazx4m+AqQ37Yg==
+cody-music@^2.9.31:
+  version "2.9.31"
+  resolved "https://registry.yarnpkg.com/cody-music/-/cody-music-2.9.31.tgz#87d8e8db4d2f1e05372ea82070176dc99de04684"
+  integrity sha512-H4PIhHBCZKwdJEXbKCoHVatlSkTOk5glW5ziDKVZy5lmmHjk3MjxcstJLylmUGEa0CvdfrDEJ2Sfsux/jpBNcQ==
   dependencies:
     axios "^0.19.0"
     moment-timezone "^0.5.28"
@@ -318,6 +323,14 @@ execa@^1.0.0:
     p-finally "^1.0.0"
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
+
+file-it@^1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/file-it/-/file-it-1.0.22.tgz#d1450fcf4f5b3328b4e23a59e72ca0e5d4fcd38a"
+  integrity sha512-y2l1nCJg2C3+52STFXTR7pBq7ulfZ8xVF9mNDDRD/WYUlVA7WC9Hh195t4MQRPPKMplAxztUXvEwofk5M6jsZw==
+  dependencies:
+    "@types/universalify" "^1.0.0"
+    universalify "^1.0.0"
 
 find-up@3.0.0, find-up@^3.0.0:
   version "3.0.0"
@@ -926,6 +939,11 @@ underscore@^1.3.1:
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.10.2.tgz#73d6aa3668f3188e4adb0f1943bd12cfd7efaaaf"
   integrity sha512-N4P+Q/BuyuEKFJ43B9gYuOj4TQUHXX+j2FqguVOpjkssLUUrnJofCcBccJSCoeturDoZU6GorDTHSvUDlSQbTg==
+
+universalify@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/universalify/-/universalify-1.0.0.tgz#b61a1da173e8435b2fe3c67d29b9adf8594bd16d"
+  integrity sha512-rb6X1W158d7pRQBg5gkR8uPaSfiids68LTJQYOtEUhoJUWBdaQHsuT/EUduxXYxcrt4r5PJ4fuHW1MHT6p0qug==
 
 which-module@^2.0.0:
   version "2.0.0"
