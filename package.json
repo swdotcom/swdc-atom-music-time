@@ -34,7 +34,7 @@
         "clipboardy": "^2.1.0",
         "cody-music": "^2.9.31",
         "crypto": "^1.0.1",
-        "file-it": "^1.0.27",
+        "file-it": "^1.1.0",
         "jquery": "^3.5.1",
         "moment-timezone": "^0.5.25",
         "node-cache": "^5.1.1",
