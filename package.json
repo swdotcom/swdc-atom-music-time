@@ -30,7 +30,7 @@
     "configSchema": {},
     "dependencies": {
         "@slack/web-api": "^5.15.0",
-        "axios": "^0.21.1",
+        "axios": "^0.21.2",
         "clipboardy": "^2.1.0",
         "cody-music": "^2.10.3",
         "crypto": "^1.0.1",
